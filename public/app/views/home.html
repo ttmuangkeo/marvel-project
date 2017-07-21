@@ -1,3 +1,13 @@
 <h1>home page</h1>
 
-<h1>{{movie.overview}}</h1>
+<div class="container">
+<div>
+<input type="text" ng-model="searchTerm">
+<button ng-click="onLoad()">submit</button>
+	<div class="row">
+		<div ng-repeat="characters in characters">
+			<p>{{characters.name}}</p>
+		</div>
+	</div>
+</div>
+</div>
