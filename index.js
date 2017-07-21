@@ -1,9 +1,7 @@
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var api = require('marvel-api');
- 
 var marvel = api.createClient({
   publicKey: '68fc17e4b4c5542c8f8b185467654e4d',
   privateKey: 'ac01615b348de06793d8085f2627aaa36cb41add'
@@ -15,20 +13,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/characters', function(req, res) {
-	marvel.characters.findAll(100)
-.then(function success(data) {
-	res.send(data);
-}).catch(function error(err) {
-	console.log(err)
-})
-});
-
-app.get('/api/character', function(req, res) {
-	marvel.characters.findByName()
+	console.log(req.query)
+	marvel.characters.findByName(req.query.searchTerm)
 	.then(function success(data) {
-	res.send(data)
-	}).catch(function err(err) {
-
+		res.send(data);
+	}).catch(function error(err) {
+		console.log(err)
+	})
+});
+app.get('/api/comics', function(req, res) {
+	marvel.comics.findAll().then(function success(data) {
+		res.send(data);
+	}).catch(function error(err) {
+		console.log(err)
 	})
 })
 

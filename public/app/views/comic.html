@@ -1,0 +1,7 @@
+<h1>hello</h1>
+<div ng-if="!comics">loading..</div>
+<div ng-if="comics">
+	<div ng-repeat="comic in comics">
+		{{comic.title}}
+	</div>
+</div>
