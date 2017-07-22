@@ -1,28 +1,22 @@
-<a href="/comic">comics</a>
-
-<!-- <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<h1>home page</h1>
-		</div>
-	</div>
+<form ng-submit="search()">
+    <input type="text" ng-model="searchTerm">
+    <button type="submit">submit</button>
+</form>
+<div ng-repeat="character in characters">
+    {{character.name}} {{character.description}}
+    <img class="img-responsive" src="{{character.thumbnail.path}}.jpg" alt="">
 </div>
+
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<div ng-repeat="characters in characters">
-				<h1>{{characters.name}}</h1>
-				<h1>{{characters.description}}</h1>
-				<img class="img-responsive card" src="{{characters.thumbnail.path}}.jpg" alt="image not found">
-			</div>
+			<h1>
+			<a href="/comics">comic</a>
+			<a href="/events">events</a>
+			<a href="/series">series</a>
+			</h1>
+
 		</div>
 	</div>
-</div> -->
-<form ng-submit="search()">
-<input type="text" ng-model="searchTerm">
-<button type="submit">submit</button>
-</form>
-<div ng-repeat="character in characters">
-{{character.name}}
-{{character.description}}
 </div>

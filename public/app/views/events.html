@@ -1,0 +1,10 @@
+<form ng-submit="search()">
+    <input type="text" ng-model="searchTerm">
+    <button type="submit">submit</button>
+</form>
+
+<div ng-repeat="event in events">
+	<h1>{{event.title}}</h1>
+	<h1>{{event.description}}</h1>
+	<img class="img-responsive" src="{{event.thumbnail.path}}.jpg" alt="">
+</div>

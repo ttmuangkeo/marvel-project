@@ -1,0 +1,10 @@
+<h1>series</h1>
+<form ng-submit="search()">
+    <input type="text" ng-model="searchTerm">
+    <button type="submit">submit</button>
+</form>
+<div ng-repeat="series in series">
+	<h1>{{series.title}}</h1>
+	<h2>{{series.description}}</h2>
+	<img src="{{series.thumbnail.path}}.jpg" alt="">
+</div>

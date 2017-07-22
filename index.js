@@ -13,8 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/characters', function(req, res) {
-	console.log(req.query)
-	marvel.characters.findByName(req.query.searchTerm)
+	marvel.characters.findNameStartsWith(req.query.searchTerm)
 	.then(function success(data) {
 		res.send(data);
 	}).catch(function error(err) {
@@ -27,7 +26,25 @@ app.get('/api/comics', function(req, res) {
 	}).catch(function error(err) {
 		console.log(err)
 	})
-})
+});
+app.get('/api/events', function(req, res) {
+	marvel.events.findByName(req.query.searchTerm)
+	.then(function success(data) {
+		res.send(data);
+	}).catch(function error(err) {
+		console.log(err);
+	});
+});
+
+app.get('/api/series', function(req, res) {
+	console.log(req)
+	marvel.series.findByTitle(req.query.searchTerm)
+	.then(function success(data) {
+		res.send(data);
+	}).catch(function error(err) {
+		console.log(err);
+	});
+});
 
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'public/index.html'));
