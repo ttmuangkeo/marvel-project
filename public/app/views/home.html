@@ -1,37 +1,98 @@
-<!-- <form ng-submit="search()">
-    <input type="text" ng-model="searchTerm">
-    <button type="submit">submit</button>
-</form>
-<div ng-repeat="character in characters">
-    {{character.name}} {{character.description}}
-    <img class="img-responsive" src="{{character.thumbnail.path}}.jpg" alt="">
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div id="title" class="slide header">
+        </div>
+
+        <div id="slide1" class="slide">
+            <div class="title">
+                <h1>Find out more about Marvel Heroes and Villains</h1>
+                <form ng-submit="search()">
+                    <input type="text" ng-model="searchTerm" placeholder="Search for Heroes">
+                    <button class="btn btn-warning btn-block" type="submit">submit</button>
+                </form>
+                <div ng-repeat="character in characters">
+                    <img id="img-char" class="img-responsive" src="{{character.thumbnail.path}}.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="slide2" class="slide" ng-repeat="character in characters">
+            <img class="img-responsive" src="{{character.thumbnail.path}}.jpg">
+            <div class="title">
+                <form ng-submit="search()">
+                    <input type="text" ng-model="searchTerm" placeholder="Search for Heroes">
+                    <button class="btn btn-warning btn-block" type="submit">submit</button>
+                </form>
+                    <p>{{character.description}}</p>
+            </div>
+        </div>
+
+        <div id="slide3" class="slide">
+            <div class="title">
+                <form ng-submit="search()">
+                    <input type="text" ng-model="searchTermSeries" placeholder="Search for Heroes">
+                    <button class="btn btn-warning btn-block" type="submit">submit</button>
+                </form>
+                <div ng-repeat="character in characters">
+                    <img id="img-char" class="img-responsive" src="{{character.thumbnail.path}}.jpg" alt="">
+                    <p>{{character.description}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="slide4" class="slide header">
+            <h1>The End (sequels coming?!)</h1>
+        </div>
+
+    </div>
 </div> -->
 <div id="title" class="slide header">
 </div>
-
 <div id="slide1" class="slide">
-  <div class="title">
-    <h1>Title 2 (something about the stories?)</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
-  </div>
+    <div class="title">
+        <h1>Find out more about Marvel Heroes and Villains</h1>
+        <form ng-submit="search()">
+            <input type="text" ng-model="searchTerm">
+            <button class="btn btn-warning btn-block" type="submit">submit</button>
+        </form>
+        <div ng-repeat="character in characters">
+            <img id="img-right" class="img-responsive" src="{{character.thumbnail.path}}.jpg" alt="">
+        </div>
+    </div>
 </div>
-
 <div id="slide2" class="slide">
-  <div class="title">
-    <h1>Title 3 (maybe a comic look up?)</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
-  </div>
-  <img src="/img/homebg5.jpg">
-  <img src="/img/homebg6.jpg"> 
+    <h1 class="title">Bio</h1>
+    <div ng-repeat="characters in characters">
+    </div>
+    <uib-carousel interval="myInterval" class="title">
+        <uib-slide ng-repeat="characters in characters" active="active" index="$index">
+            <img class="img-responsive" src="{{characters.thumbnail.path}}.jpg" alt="">
+            <h1>{{characters.name}}</h1>
+            <p>{{characters.description}}</p>
+        </uib-slide>
+    </uib-carousel>
+    <img id="img-left" src="/img/homebg8.jpg" alt="">
+    <img class="img" src="/img/homebg6.jpg" alt="">
 </div>
-
 <div id="slide3" class="slide">
-  <div class="title">
-    <h1>Title 4 (stuff about characters?)</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
-  </div>
+    <h1 class="title">Series</h1>
+    <uib-carousel interval="myInterval" class="title">
+        <uib-slide ng-repeat="series in series" active="active" index="$index">
+            <img class="img-responsive" src="{{series.thumbnail.path}}.jpg" alt="">
+            <h1>{{series.name}}</h1>
+            <p>{{series.description}}</p>
+        </uib-slide>
+    </uib-carousel>
 </div>
-
+<div id="slide5" class="slide">
+    <h1 class="title">
+</h1>
+</div>
+<div id="slide6" class="slide">
+    <h1 class="title">
+</h1>
+</div>
 <div id="slide4" class="slide header">
-    <h1>The End (sequels coming?!)</h1>
+    <h1>Issue #7</h1>
+    <h2>Written by: Tim Muangkeo</h2>
 </div>

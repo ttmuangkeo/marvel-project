@@ -17,15 +17,15 @@ app.get('/api/characters', function(req, res) {
 	.then(function success(data) {
 		res.send(data);
 	}).catch(function error(err) {
-		console.log(err)
-	})
+		console.log(err);
+	});
 });
 app.get('/api/comics', function(req, res) {
 	marvel.comics.findAll().then(function success(data) {
 		res.send(data);
 	}).catch(function error(err) {
-		console.log(err)
-	})
+		console.log(err);
+	});
 });
 app.get('/api/events', function(req, res) {
 	marvel.events.findByName(req.query.searchTerm)
