@@ -12,7 +12,7 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
     font-family: 'Comic Sans MS', cursive;
-    /*background-color: black;*/
+    background-color: black;
 }
 
 h1 {
@@ -22,7 +22,7 @@ h1 {
 p {
     font-size: 140%;
     line-height: 150%;
-    color: #333;
+    color: #111;
 }
 
 .slide {
@@ -59,6 +59,24 @@ p {
     background: rgba(240, 230, 220, .7);
     box-shadow: 0 0 8px rgba(0, 0, 0, .7);
 }
+#img-right-series {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    width: 350px;
+    height: 320px;
+    transform: translateZ(.4px) scale(.75) translateX(-94%) translateY(-100%) rotate(5deg);
+    padding: 10px;
+}
+#img-left-series {
+    position: absolute;
+    top: 70%;
+    left: 75%;
+    width: 350px;
+    height: 320px;
+    transform: translateZ(.4px) scale(.75) translateX(-94%) translateY(-100%) rotate(5deg);
+    padding: 10px;
+}
 
 .img {
     position: absolute;
@@ -68,9 +86,6 @@ p {
     height: 240px;
     transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-100%) rotate(2deg);
     padding: 10px;
-    border-radius: 5px;
-    background: rgba(240, 230, 220, .7);
-    box-shadow: 0 0 8px rgba(0, 0, 0, .7);
 }
 
 .img:last-of-type {
@@ -92,7 +107,7 @@ p {
     border-radius: 5px;
     background: rgba(240, 230, 220, .7);
     box-shadow: 0 0 8px rgba(0, 0, 0, .7);
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS';
 }
 
 .slide:nth-child(2n) .title {
@@ -131,8 +146,12 @@ p {
 
 #slide3:before {
     background-image: url("/img/homebg3.jpg");
-    width: 100%;
     transform: translateZ(-1px) scale(2);
+    z-index: -1;
+}
+#slide5 {
+    background-image: url("/img/homebg9.jpg");
+    transform: translateZ(-3px) scale(2)
     z-index: -1;
 }
 

@@ -5,9 +5,9 @@ angular.module('App')
 
 
         $scope.search = function() {
-        $scope.myInterval = 8000;
-        $scope.noWrapSlides = false;
-        $scope.active = 0;
+            $scope.myInterval = 8000;
+            $scope.noWrapSlides = false;
+            $scope.active = 0;
             $http({
                 url: '/api/characters',
                 params: {
@@ -41,8 +41,21 @@ angular.module('App')
             }).catch(function error(err) {
                 console.log(err)
             });
+        $http({
+            url: 'https://api.themoviedb.org/3/search/movie?',
+            params: {
+                api_key: '319d947494f89873025c8ccfc5c78927',
+                query: $scope.searchTerm
+            }
+        }).then(function success(res) {
+            $scope.movies = res.data.results
+            console.log('movies', res)
+        }).catch(function error(err) {
+            console.log(err);
+        })
         };
     }])
+
 // .controller('ComicCtrl', ['$scope', '$http', function($scope, $http) {
 //         $scope.comics = null;
 //         $http({

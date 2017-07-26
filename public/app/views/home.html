@@ -46,32 +46,34 @@
 
     </div>
 </div> -->
-<div id="title" class="slide header">
+<div id="title" class="slide header animated pulse">
 </div>
 <div id="slide1" class="slide">
     <div class="title">
-        <h1>Find out more about Marvel Heroes and Villains</h1>
+        <h1>Begin here! <br> type in a hero or villain <i class="fa fa-arrow-down"></i></h1>
+        <hr>
         <form ng-submit="search()">
-            <input type="text" ng-model="searchTerm">
+        
+            <input type="text" ng-model="searchTerm" class="text-center" placeholder="Iron Man, Thor, Avengers....">
             <button class="btn btn-warning btn-block" type="submit">submit</button>
         </form>
-        <div ng-repeat="character in characters">
-            <img id="img-right" class="img-responsive" src="{{character.thumbnail.path}}.jpg" alt="">
+        <div ng-repeat="character in characters | limitTo: 1">
+            <img id="img-right" class="img-responsive animated lightSpeedIn" src="{{character.thumbnail.path}}.jpg" alt="">
         </div>
     </div>
 </div>
 <div id="slide2" class="slide">
-    <h1 class="title">Bio</h1>
+    <h1 class="title">Biography</h1>
     <div ng-repeat="characters in characters">
     </div>
     <uib-carousel interval="myInterval" class="title">
-        <uib-slide ng-repeat="characters in characters" active="active" index="$index">
+        <uib-slide ng-repeat="characters in characters | limitTo: 3" active="active" index="$index">
             <img class="img-responsive" src="{{characters.thumbnail.path}}.jpg" alt="">
             <h1>{{characters.name}}</h1>
             <p>{{characters.description}}</p>
         </uib-slide>
     </uib-carousel>
-    <img id="img-left" src="/img/homebg8.jpg" alt="">
+    <img id="img-left" src="/img/homebg5.jpg" alt="">
     <img class="img" src="/img/homebg6.jpg" alt="">
 </div>
 <div id="slide3" class="slide">
@@ -81,6 +83,19 @@
             <img class="img-responsive" src="{{series.thumbnail.path}}.jpg" alt="">
             <h1>{{series.name}}</h1>
             <p>{{series.description}}</p>
+        </uib-slide>
+    </uib-carousel>
+    <img id="img-right-series" src="/img/thor.png" alt="">
+    <img id="img-left-series" src="/img/vision.png" alt="">
+</div>
+
+<div id="slide5" class="slide">
+<h1 class="title">Movies</h1>
+    <uib-carousel interval="myInterval" class="title">
+        <uib-slide ng-repeat="movie in movies | limitTo: 3" active="active" index="$index">
+            <img class="img-responsive" src="https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" alt="">
+            <h1 class="white-text">{{movie.title}} - <span class="red-text">{{movie.release_date | date: "fullDate"}}</span></h1>
+            <p class="white-text">{{movie.overview}}</p>
         </uib-slide>
     </uib-carousel>
 </div>
