@@ -5,7 +5,6 @@
         <h1>Begin here! <br> type in a hero or villain <i class="fa fa-arrow-down"></i></h1>
         <hr>
         <form ng-submit="search()">
-        
             <input type="text" ng-model="searchTerm" class="text-center" placeholder="Iron Man, Thor, Avengers....">
             <button class="btn btn-warning btn-block" type="submit">submit</button>
         </form>
@@ -37,17 +36,23 @@
             <p>{{series.description}}</p>
         </uib-slide>
     </uib-carousel>
-    <img id="img-right-series" src="/img/thor.png" alt="">
-    <img id="img-left-series" src="/img/vision.png" alt="">
+    <div class="wow lightSpeedIn">
+        <img id="img-right-series" src="/img/thor.png" alt="">
+        <img id="img-left-series" src="/img/vision.png" alt="">
+    </div>
 </div>
-
 <div id="slide5" class="slide">
-<h1 class="title">Movies</h1>
+    <h1 class="title">Movies</h1>
     <uib-carousel interval="myInterval" class="title">
         <uib-slide ng-repeat="movie in movies | limitTo: 3" active="active" index="$index">
             <img class="img-responsive" src="https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" alt="">
             <h1 class="white-text">{{movie.title}} - <span class="red-text">{{movie.release_date | date: "fullDate"}}</span></h1>
             <p class="white-text">{{movie.overview}}</p>
+        </uib-slide>
+    </uib-carousel>
+    <uib-carousel interval="myInterval" class="title">
+        <uib-slide ng-repeat="video in video" active="active" index="$index">
+            <object width="420" height="315" data="https://www.youtube.com/embed/{{video}}"></object>
         </uib-slide>
     </uib-carousel>
 </div>
