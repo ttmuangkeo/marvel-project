@@ -3,10 +3,6 @@ angular.module('App')
         $scope.searchTerm = '';
         var key = 'AIzaSyAvXicL5S7E64gpIVFNNxYkwgTyvAKijdU';
         var ytvideo = [];
-
-
-
-
         $scope.search = function() {
             $scope.myInterval = 0;
             $scope.noWrapSlides = false;
@@ -78,47 +74,3 @@ angular.module('App')
             });
         };
     }]);
-
-// .controller('ComicCtrl', ['$scope', '$http', function($scope, $http) {
-//         $scope.comics = null;
-//         $http({
-//             url: '/api/comics'
-//         }).then(function success(res) {
-//             console.log(res.data.data)
-//             $scope.comics = res.data.data
-//         }).catch(function err(err) {
-//             console.log(err);
-//         });
-//     }])
-//     .controller('EventCtrl', ['$scope', '$http', function($scope, $http) {
-//         $scope.searchTerm = '';
-//         $scope.search = function() {
-//             $http({
-//                 url: 'api/events',
-//                 params: {
-//                     searchTerm: $scope.searchTerm
-//                 }
-//             }).then(function success(res) {
-//                 $scope.events = res.data.data
-//                 console.log(res)
-//             }).catch(function error(err) {
-//                 console.log(err)
-//             });
-//         }
-//     }])
-//     .controller('SeriesCtrl', ['$scope', '$http', function($scope, $http) {
-//         $scope.searchTerm = '';
-//         $scope.search = function() {
-//             $http({
-//                 url: 'api/series',
-//                 params: {
-//                     searchTerm: $scope.searchTerm
-//                 }
-//             }).then(function success(res) {
-//                 console.log(res)
-//                 $scope.series = res.data.data
-//             }).catch(function error(err) {
-//                 console.log(err)
-//             });
-//         }
-//     }])
